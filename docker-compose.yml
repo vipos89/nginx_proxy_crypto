@@ -20,4 +20,4 @@ networks:
       name: petobots-network
   carbar-network:
     external:
-      name
+      name: web3-api-network
