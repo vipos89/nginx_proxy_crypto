@@ -8,6 +8,9 @@ services:
 
     volumes:
         - ./hosts:/etc/nginx/conf.d
+    networks:
+      - petobots-network
+      - web3-api-network
 
     ports:
       - "80:80"
@@ -15,9 +18,10 @@ services:
 
 
 networks:
-  petobots-network:
+  default:
     external:
       name: petobots-network
+
   carbar-network:
     external:
       name: web3-api-network
