@@ -18,9 +18,8 @@ services:
 
 
 networks:
-  default:
-    external:
-      name: petobots-network
+  petobots-network:
+    external: true
 
   web3-api-network:
     external: true
