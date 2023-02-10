@@ -1,25 +1,12 @@
 version: '3'
-
 services:
-  nginx:
-    image: nginx:latest
-    container_name: nginx-proxy
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
     restart: unless-stopped
-
-    volumes:
-        - ./hosts:/etc/nginx/conf.d
-    networks:
-      - petobots-network
-      - web3-api-network
-
     ports:
-      - "80:80"
-#      - "443:443"
-
-
-networks:
-  petobots-network:
-    external: true
-
-  web3-api-network:
-    external: true
+#      - '80:80'
+      - '82:81'
+      - '443:443'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
