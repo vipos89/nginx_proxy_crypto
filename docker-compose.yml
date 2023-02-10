@@ -22,6 +22,5 @@ networks:
     external:
       name: petobots-network
 
-  carbar-network:
-    external:
-      name: web3-api-network
+  web3-api-network:
+    external: true
